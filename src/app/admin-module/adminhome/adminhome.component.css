@@ -1,0 +1,459 @@
+.j-fullwidth-banner-container {
+    background-color: #f9f9f9;
+    display: flex;
+    align-items: flex-end;
+    background-image: url('https://jep-asset.akamaized.net/enterprisestaticresources/prod/v02/images/webp/Homepage+WebP+Assets/Realise+your+ambitions+section/Desktop/realise-your-ambitions-desktop.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    height: 400px; /* Adjust the height as needed */
+    background-position: center bottom; /* Adjust the position as needed */
+    border-radius: 20px; /* Adjust border radius as needed */
+    margin: 45px;
+  }
+  .j-contentBlock {
+    max-width: 50%;
+  }
+  .j-contentBlock__body {
+    padding: 20px;
+  }
+  .j-contentBlock__title {
+    font-size: 36px; /* Adjust font size as needed */
+  }
+  .j-contentBlock__description {
+    font-size: 24px; /* Adjust font size as needed */
+  }
+  .j-button-group {
+    display: inline-flex;
+  }
+  .j-button {
+    font-size: 24px; /* Adjust font size as needed */
+    background-color: darkred; /* Set button background color to red */
+    color: white; /* Set button text color to white */
+    padding: 10px 20px; /* Adjust padding as needed */
+    border: none;
+    border-radius: 10px; /* Adjust border radius as needed */
+    cursor: pointer;
+  }
+  .j-button:hover {
+    background-color: rgb(87, 2, 2); /* Change background color on hover */
+  }
+
+
+
+
+
+
+   h2 {
+
+    font-size: 40px; /* Adjust font size as needed */
+  
+    color: black; /* Set text color */
+  
+    padding: 10px 0; /* Adjust padding as needed */
+  
+    text-align: center; /* Align text to center */
+  
+    font-weight: bold; /* Make the text bold */
+  
+  }
+
+  a.boxes2, .boxes2 {
+    user-select: none;
+    transition: .3s ease;
+    -webkit-font-smoothing: antialiased;
+    text-decoration:none;
+  }
+  
+  .boxes2 table,td {
+      table-layout: fixed;
+      text-decoration:none;
+      width:100%;
+  table-layout:fixed;
+  margin-right:auto;
+  margin-left:auto;
+  border-collapse:collapse;
+  padding:1vw;
+    }
+  
+  
+  a.boxes2 td {
+  width:50vw !important;
+  align:center;
+      }
+  a {
+  text-decoration:none;
+  }
+  
+  .heroheadline {
+    font-size: 3.2vw;
+    position:fixed;
+    color: white;
+    font-family: 'Montserrat',
+  sans-serif;
+  bottom:0vw;
+    text-decoration:none;
+    margin-left:3vw;
+    top:3vw;
+    font-weight:600;
+  }
+  
+  
+  
+  .herocaption {
+  position:absolute;
+    color: white;
+    font-family: 'Hind',
+  sans-serif;
+    font-weight: 400;
+    font-size: 2.5vw;
+    text-decoration:none;
+  top:5vw;
+  text-align:left !important;
+  margin-left:3vw;
+  z-index:1;
+  line-height:3vw;
+  
+  }
+  
+  .btn {
+  position:absolute !important;
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 1vw;
+  background: darkred; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #8d1311, #68080b); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #871a16, #890d11); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color:white;
+    font-family: 'Montserrat',san-serif;
+    font-size:2vw;
+    font-weight:400;
+    letter-spacing:.1vw;
+    font-weight:400;
+    box-shadow:0 0px 0px ,
+  0 0px 0px rgba(0, 0, 0, 0);
+  transition: .2s ease;
+    text-decoration:none;
+  text-align:left !important;
+  margin-left:3vw;
+  bottom:2vw;
+  
+  }
+  
+  .btn:hover {
+    box-shadow:0 7px 14px ,
+  0 3px 6px rgba(0, 0, 0, 1);
+    transform: translateY(-3px);
+    font-weight:600;
+  }
+  
+  .btn:active {
+    box-shadow:0 4px 6px 
+  0 1px 3px rgba(0, 0, 0, .3);
+  transition: .2s ease;
+    transform: translateY(.1vw);
+      text-decoration:none;
+      
+  }
+  
+  
+  .pic1 {
+  background-image: url(https://img.freepik.com/free-photo/application-contact-communication-connection-concept_53876-132755.jpg?w=900&t=st=1696688316~exp=1696688916~hmac=d46b678b9e1a3db40dc06f321f055b699655046002ebceecbb8976942944d2b5);}
+  .pic2 {
+  background-image: url(https://img.freepik.com/premium-photo/businessman-hand-using-laptop-computor-search-browse-internet-data-information-wood-tables-internet-digital-online-seo-networking-concept-society-web-with-search-box-icon-copy-space_271541-269.jpg?w=900);}
+  
+
+  
+.herotile {
+    width: 44vw;
+     height:30vw;
+     display: inline-block;
+     vertical-align: top;
+     position: absolute;
+     background-size:cover;
+    box-shadow: 0 18px 35px rgba(50, 50, 90, .1), 0 8px 15px rgba(0, 0, 0, .2);
+    cursor:pointer;
+   text-align:left !important;
+   }
+   .herotile * {
+       position: relative;
+       align:center;
+   }
+   
+   
+   .hero_overlay {
+     position: relative;
+   }
+   
+   .hero_overlay:before {
+   background-color: rgba(32,32,32,.7);
+     position: absolute;
+     content:" ";
+     top:0;
+     left:0;
+     width:100%;
+     height:100%;
+     display: block;
+     z-index:0;
+     opacity: .2;
+     transition: opacity 0.3s linear;
+   }
+   
+   .hero_overlay:hover:before
+   {
+     opacity: 0;
+     transition: opacity 0.3s linear; 
+     cursor:pointer;}
+
+   
+  
+
+
+
+
+
+
+     @import url('https://fonts.googleapis.com/css2?family=Onest:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Onest', sans-serif;
+}
+
+:root{
+  --color-bg:#121119;
+  --transition: 0.8s;
+  --transition-shorter: 1.5s;
+  --color-border: rgba(255, 255, 255, 0.2);
+  --color-border-2: rgba(255, 255, 255, 0.1);
+  --color-box-shadow: rgba(0, 0, 0, 0.25);
+  --color-glass-hover: rgba(255, 255, 255, 0.05);
+  --gradient-gray: #fff2;
+  --text-color: #fff;
+  --icon-color: #fff8;
+  --color-1: #153015;
+  --color-2: #102135;
+  --color-3: #350020;
+  --color-4: #201135;
+}
+
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: var(--color-bg);
+    transition: var(--transition);
+}
+
+body:has(.box[data-color="clr1"]:hover){
+  background: var(--color-1);
+}
+
+body:has(.box[data-color="clr2"]:hover){
+  background: var(--color-2);
+}
+
+body:has(.box[data-color="clr3"]:hover){
+  background: var(--color-3);
+}
+
+body:has(.box[data-color="clr4"]:hover){
+  background: var(--color-4);
+}
+
+.container {
+    position: relative;
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.container .box {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: var(--transition);
+}
+
+[data-color="clr1"] {
+    box-shadow: 0 0 10px 1px var(--color-1),
+                0 0 25px 5px var(--color-1),
+                0 0 50px 10px var(--color-1);
+}
+
+[data-color="clr1"]:hover {
+    box-shadow: 0 15px 15px var(--color-box-shadow);
+}
+
+[data-color="clr2"] {
+    box-shadow: 0 0 10px 1px var(--color-2),
+                0 0 25px 5px var(--color-2),
+                0 0 50px 10px var(--color-2);
+}
+
+[data-color="clr2"]:hover {
+    box-shadow: 0 15px 15px var(--color-box-shadow);
+}
+
+[data-color="clr3"] {
+    box-shadow: 0 0 10px 1px var(--color-3),
+                0 0 25px 5px var(--color-3),
+                0 0 50px 10px var(--color-3);
+}
+
+[data-color="clr3"]:hover {
+    box-shadow: 0 15px 15px var(--color-box-shadow);
+}
+
+[data-color="clr4"] {
+    box-shadow: 0 0 10px 1px var(--color-4),
+                0 0 25px 5px var(--color-4),
+                0 0 50px 10px var(--color-4);
+}
+
+[data-color="clr4"]:hover {
+    box-shadow: 0 15px 15px var(--color-box-shadow);
+}
+
+
+
+
+.container .box .imgBx {
+    position: absolute;
+    inset: 0;
+    border-radius: 10px;
+    border: 1px solid var(--color-border);
+}
+
+.container .box .imgBx img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+    border-radius: 10px;
+}
+
+.container .box:hover .imgBx img {
+    opacity: 0.5;
+}
+
+.container .box .glass {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(var(--gradient-gray), transparent);
+    border: 1px solid var(--color-border-2); 
+    box-shadow: 0 15px 15px var(--color-box-shadow);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    scale: 0;
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: var(--transition);
+    transform: rotate(-30deg);
+}
+
+.container .box .glass::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  background: var(--color-glass-hover);
+}
+
+.container .box:hover {
+    transform: rotate(-15deg);
+}
+
+.container .box:hover .glass {
+    opacity: 1;
+    scale: 1;
+    transform: rotate(20deg)
+}
+
+.container .box .glass h3 {
+    font-size: 1.25em;
+    color: var(--text-color);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-align: center;
+    line-height: 1;
+    position: relative;
+    top: -15px;
+  
+}
+
+.container .box .glass span  {
+    font-weight: 400;
+    font-size: 0.5em;
+}
+
+.container .box ul {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.container .box ul a {
+    color: var(--icon-color);
+    font-size: 1.25em;
+    scale: 0;
+    transition: var(--transition-shorter);
+    transition-delay: scale calc(0.2s * var(--i));
+}
+
+.container .box:hover ul a {
+    scale: 1;
+}
+
+.container .box ul a:hover {
+  color: var(--text-color);
+}
+
+h1 {
+    position:absolute;
+    top: 40px;
+    color: var(--text-color);
+    font-weight: 100;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+@media screen and (max-width: 450px) {
+    .container {
+        margin-top: 140px;
+    }
+    
+    h1{
+        width: 80%;
+    }
+}
+
+
+@media screen and (min-width: 950px) {
+    h1 {
+        top: 90px;
+    }
+}

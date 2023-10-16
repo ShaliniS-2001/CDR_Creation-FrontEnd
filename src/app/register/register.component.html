@@ -1,0 +1,83 @@
+
+<br><br><br>
+<body class="main-bg">
+    <div class="login-container text-c animated flipInX">
+            <div>
+                <h1 class="logo-badge text-whitesmoke"><span class="fa fa-user-circle"></span></h1>
+            </div>
+            <h3 class="text-whitesmoke">Sign Up</h3>
+
+            <div class="container-content">
+        
+              <form #regForm="ngForm" class="margin-t" (ngSubmit)="onSubmit()">
+        
+                <div class="form-group"> 
+                  <input type="text" class="form-control" id="username" placeholder="Username" [(ngModel)]='reg.username' name="username" #username="ngModel" required [class.is-invalid]="username.invalid && username.touched" pattern="^[A-Za-z'' ']+$" minlength="3">
+                  <div *ngIf="username.touched"> 
+                    <div *ngIf="username.invalid"> 
+                    <small class="text-danger" *ngIf="username.errors?.['required']">Name Can't be empty</small>
+                    <small class="text-danger" *ngIf="username.errors?.['pattern']">Name Should have only alphabets</small>
+                    <small class="text-danger" *ngIf="username.errors?.['minlength']">Name Should have Min 3 Character</small>
+                    </div>
+                  </div>
+                </div><br>
+        
+                <div class="form-group">      
+                  <input type="text" class="form-control" id="address" placeholder="Address" [(ngModel)]='reg.address' name="address" #address="ngModel" required [class.is-invalid]="address.invalid && address.touched"  minlength="10" >
+                  <div *ngIf="address.touched"> 
+                    <div *ngIf="address.invalid"> 
+                    <small class="text-danger" *ngIf="address.errors?.['required']">Address Can't be empty</small>
+                    <small class="text-danger" *ngIf="address.errors?.['minlength']">Address Should have Min 10 Character</small>
+                    </div>
+                  </div>
+                </div><br>
+        
+                <div class="form-group">
+        
+                  <input type="text" class="form-control" id="phone" placeholder="Phone Number" [(ngModel)]='reg.phone' name="phone" #phone="ngModel" required [class.is-invalid]="phone.invalid && phone.touched" pattern="[7896]\d{9}" >
+                  <div *ngIf="phone.touched"> 
+                    <div *ngIf="phone.invalid"> 
+                    <small class="text-danger" *ngIf="phone.errors?.['required']">Field Can't be empty</small>
+                    <small class="text-danger" *ngIf="phone.errors?.['pattern']">Enter a valid phone number</small>
+                    </div>
+                  </div>
+                </div><br>
+        
+                <div class="form-group">
+        
+                  <input type="email" class="form-control" id="email" placeholder="Email" [(ngModel)]='reg.email' name="email" #email="ngModel" required [class.is-invalid]="email.invalid && email.touched" pattern="[a-zA-Z0-9._]+@(gmail\.com|.*\.edu|.*\.org)">
+                  <div *ngIf="email.touched"> 
+                    <div *ngIf="email.invalid"> 
+                    <small class="text-danger" *ngIf="email.errors?.['required']">Field Can't be empty</small>
+                    <small class="text-danger" *ngIf="email.errors?.['pattern']">Enter a valid email id</small>
+                    </div>
+                  </div>
+                </div><br>
+        
+                <div class="form-group">
+        
+                  <input type="password" class="form-control" id="password" placeholder="Password" [(ngModel)]='reg.password' name="password" #password="ngModel" required [class.is-invalid]="password.invalid && password.touched">
+                  <div *ngIf="password.touched"> 
+                    <div *ngIf="password.invalid"> 
+                    <small class="text-danger" *ngIf="password.errors?.['required']">Field Can't be empty</small>
+                    </div>
+                  </div>
+                </div><br>
+        
+                <div class="form-group">
+        
+                  <select  class="form-select" id="plan" placeholder="Select" [(ngModel)]='reg.plan' name="plan" #plan="ngModel" required [class.is-invalid]="plan.invalid && plan.touched && hasError" (blur)="validate(plan.value)" (change)="validate(plan.value)">
+                    <option value="default">--Select a Plan--</option>
+                    <option *ngFor="let c of plans" value="{{c}}">{{c}}</option>
+                  </select>
+                  <small class="text-danger" [class.d-none]="plan.untouched || !hasError">Select a Plan</small>
+                </div><br>
+        
+                <button type="submit" class="form-button button-l margin-b" [disabled]="regForm.form.invalid || hasError">Sign Up</button>
+        
+              </form>
+        
+            </div>
+        </div>
+        <br><br>
+</body>

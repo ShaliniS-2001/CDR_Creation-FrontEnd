@@ -1,0 +1,46 @@
+body {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    color: rgb(var(--bs-tertiary-color-rgb));
+  }
+  /* Color of the links BEFORE scroll */
+  .navbar-scroll .nav-link,
+  .navbar-scroll .navbar-toggler-icon,
+  .navbar-scroll .navbar-brand {
+    color: #fff;
+  }
+  /*button color red*/
+  .btn-red {
+  
+    background-color: darkred;
+    border: 2px solid darkred; /* Optional: You can remove this line if you don't want a border */
+    color: white; /* Adjust text color for contrast */
+  }
+  
+  /* Optional: Add hover effect */
+  .btn-red:hover {
+    background-color: darkred;
+  }
+  
+  /* Color of the links AFTER scroll */
+  .navbar-scrolled .nav-link,
+  .navbar-scrolled .navbar-toggler-icon,
+  .navbar-scrolled .navbar-brand {
+    color: #fff;
+  }
+  
+  /* Color of the navbar AFTER scroll */
+  .navbar-scroll,
+  .navbar-scrolled {
+    background-color: #cbbcb1;
+  }
+  
+  .mask-custom {
+    backdrop-filter: blur(5px);
+    background-color: rgba(255, 255, 255, .15);
+  }
+  
+  .navbar-brand {
+    font-size: 1.75rem;
+    letter-spacing: 3px;
+  }

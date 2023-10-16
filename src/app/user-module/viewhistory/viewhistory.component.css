@@ -1,0 +1,242 @@
+.j-fullwidth-banner-container {
+  background-color: #f9f9f9;
+  display: flex;
+  align-items: flex-end;
+  /* background-image: url('https://img.freepik.com/premium-photo/photo-female-hands-fingers-her-computer-keyboard-while-typing_763111-33172.jpg?w=900'); */
+  background-image: url('https://img.freepik.com/free-photo/finger-pressing-smartphone-screen_53876-105170.jpg?w=900&t=st=1696677714~exp=1696678314~hmac=d7ed6019161b682a93493d517169d2d7aeab709dd87957d06e018ee7e655f20a');
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
+  height: 430px; /* Adjust the height as needed */
+  background-position: center bottom; /* Adjust the position as needed */
+  border-radius: 20px; /* Adjust border radius as needed */
+  margin: 45px;
+}
+.j-contentBlock {
+  max-width: 50%;
+}
+.j-contentBlock__body {
+  padding: 20px;
+}
+.j-contentBlock__title {
+  font-size: 36px; /* Adjust font size as needed */
+}
+.j-contentBlock__description {
+  font-size: 24px; /* Adjust font size as needed */
+}
+.j-button-group {
+  display: inline-flex;
+}
+.j-button {
+  font-size: 24px; /* Adjust font size as needed */
+  background-color: darkred; /* Set button background color to red */
+  color: white; /* Set button text color to white */
+  padding: 10px 20px; /* Adjust padding as needed */
+  border: none;
+  border-radius: 10px; /* Adjust border radius as needed */
+  cursor: pointer;
+}
+.j-button:hover {
+  background-color: rgb(87, 2, 2); /* Change background color on hover */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+body {
+
+  font-family: Arial, sans-serif;
+
+  margin: 20px;
+
+}
+
+h2 {
+
+  font-size: 40px; /* Adjust font size as needed */
+  color: black; /* Set text color */
+  padding: 10px 0; /* Adjust padding as needed */
+  text-align: center; /* Align text to center */
+  font-weight: bold; /* Make the text bold */
+
+}
+
+h3{
+  font-size: 24px; /* Adjust font size as needed */
+  padding: 10px 0; /* Adjust padding as needed */
+  color: black; /* Set text color */
+  text-align: center; /* Align text to center */
+
+} 
+
+h1{
+  font-size: 20px; /* Adjust font size as needed */
+  padding: 10px 0; /* Adjust padding as needed */
+  color: black; /* Set text color */
+  text-align: center; /* Align text to center */
+  font-weight: bold; /* Make the text bold */
+} 
+
+.custom-table {
+
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+}
+
+ 
+
+.custom-table th, .custom-table td {
+
+  padding: 15px;
+  text-align: left;
+  border: 1px solid #ccc;
+
+}
+.custom-table th {
+
+  background-color: #f0f0f0;
+  border-bottom: 2px solid #ccc;
+
+}
+.custom-table tbody tr:nth-child(odd) {
+
+  background-color: #f9f9f9;
+
+}
+.custom-table tbody tr:nth-child(even) {
+
+  background-color: #eaeaea;
+
+}
+.custom-table tbody tr:hover {
+  background-color: #f5f5f5;
+  transform: scale(1.02);
+  transition: background-color 0.3s, transform 0.3s;
+
+}
+.custom-table i {
+  margin-right: 5px;
+}
+
+.card {
+    height: 600px;
+    margin: 0;
+    display: grid;
+    grid-template-rows: 500px 100px;
+    grid-template-columns: 1fr 30px 30px 30px 30px 30px 1fr;
+    align-items: center;
+    justify-items: center;
+  }
+  
+  main#carousel {
+    grid-row: 1 / 2;
+    grid-column: 1 / 8;
+    width: 100vw;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transform-style: preserve-3d;
+    perspective: 600px;
+    --items: 5;
+    --middle: 3;
+    --position: 1;
+    pointer-events: none;
+  }
+  
+  div.item {
+    position: absolute;
+    width: 300px;
+    height: 400px;
+    background-color: rgb(246, 238, 235);
+    --r: calc(var(--position) - var(--offset));
+    --abs: max(calc(var(--r) * -1), var(--r));
+    transition: all 0.25s linear;
+    transform: rotateY(calc(-10deg * var(--r)))
+      translateX(calc(-300px * var(--r)));
+    z-index: calc((var(--position) - var(--abs)));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  div.item img{
+    width:95%;
+    height:60%;
+    border-radius: 10px;
+  }
+  div.item:nth-of-type(1) {
+    --offset: 1;
+    background-color: white;
+  }
+  div.item:nth-of-type(2) {
+    --offset: 2;
+    background-color: white;
+  }
+  div.item:nth-of-type(3) {
+    --offset: 3;
+    background-color: white;
+  }
+  div.item:nth-of-type(4) {
+    --offset: 4;
+    background-color: white;
+  }
+  div.item:nth-of-type(5) {
+    --offset: 5;
+    background-color: white;
+  }
+  
+  input:nth-of-type(1) {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+  }
+  input:nth-of-type(1):checked ~ main#carousel {
+    --position: 1;
+  }
+  
+  input:nth-of-type(2) {
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+  }
+  input:nth-of-type(2):checked ~ main#carousel {
+    --position: 2;
+  }
+  
+  input:nth-of-type(3) {
+    grid-column: 4 /5;
+    grid-row: 2 / 3;
+  }
+  input:nth-of-type(3):checked ~ main#carousel {
+    --position: 3;
+  }
+  
+  input:nth-of-type(4) {
+    grid-column: 5 / 6;
+    grid-row: 2 / 3;
+  }
+  input:nth-of-type(4):checked ~ main#carousel {
+    --position: 4;
+  }
+  
+  input:nth-of-type(5) {
+    grid-column: 6 / 7;
+    grid-row: 2 / 3;
+  }
+  input:nth-of-type(5):checked ~ main#carousel {
+    --position: 5;
+  }
+  

@@ -1,0 +1,539 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+  <head><script src="../assets/js/color-modes.js"></script>
+
+    <!-- <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.118.2">
+    <title>Carousel Template · Bootstrap v5.3</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/carousel/"> -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        width: 100%;
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+
+
+      .bd-mode-toggle {
+        z-index: 1500;
+      }
+
+      .bd-mode-toggle .dropdown-menu .active .bi {
+        display: block !important;
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template
+    <link href="carousel.css" rel="stylesheet"> -->
+  </head>
+  <body>
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+      <symbol id="check2" viewBox="0 0 16 16">
+        <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+      </symbol>
+      <symbol id="circle-half" viewBox="0 0 16 16">
+        <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+      </symbol>
+      <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+        <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+        <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+      </symbol>
+      <symbol id="sun-fill" viewBox="0 0 16 16">
+        <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+      </symbol>
+    </svg>
+
+    <header>
+     
+    
+     
+    </header>
+
+
+<main>
+  
+  <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel"><br>
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <!-- <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg> -->
+        <img src="https://img.freepik.com/premium-photo/attractive-guy-using-mobile-phone-residence_176841-27000.jpg?w=1060" class="d-block w-100" alt="Image Alt Text">
+        <div class="container">
+          <div class="carousel-caption text-start">
+            <h1>ProTel-Where the <br>connectivity meets comfort</h1>
+            <!-- <p class="opacity-75">Some representative placeholder content for the first slide of the carousel.</p> -->
+            <!-- <p><a class="btn btn-lg btn-red" href="#">Sign up today</a></p> -->
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <!-- <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg> -->
+        <img src="https://img.freepik.com/premium-photo/young-woman-watching-video-demand-her-tv_738298-602.jpg?w=1060" class="d-block w-100" alt="Image Alt Text">
+        <div class="container">
+          <div class="carousel-caption text-end">
+            <h1>You will reimagine<br> all the digital experiences<br> with ProTel</h1>
+            <!-- <p class="opacity-75">Some representative placeholder content for the third slide of this carousel.</p> -->
+            <!-- <p><a class="btn btn-lg btn-red" href="#">Browse gallery</a></p> -->
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <!-- <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg> -->
+        <img src="https://img.freepik.com/free-photo/young-adult-holding-smartphone-photographs-performer-stage-generated-by-ai_24640-81926.jpg?t=st=1696752125~exp=1696755725~hmac=d8592c91af4f8f0280e0f394fc21cb83dd1309b19808c20ac0d88084e05a1d73&w=1060" class="d-block w-100" alt="Image Alt Text">
+        <div class="container">
+          <div class="carousel-caption text-lg-start">
+            <h1>Embrace smart <br> living with your smartphones</h1>
+            <!-- <p class="opacity-75">Some representative placeholder content for the second slide of the carousel.</p> -->
+            <!-- <p><a class="btn btn-lg btn-red" href="#">Learn more</a></p> -->
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+
+  <!-- Marketing messaging and featurettes
+  ================================================== -->
+  <!-- Wrap the rest of the page in another container to center all the content. -->
+
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<!-- OUR PLANS-->
+<section id="team" class="pb-5">
+    <div class="container">
+        <div class="main-title text-center">
+            <h1>RECOMMENDED FOR YOU</h1>
+            <p>We offer you the best!!!!</p>
+        </div>
+        <!-- <h5 class="section-title h1">RECOMMENDED FOR YOU</h5> -->
+        <div class="row">
+            <!-- PLANS 1 -->
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <div class="image-flip" >
+                    <div class="mainflip flip-0">
+                        <div class="frontside">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <p><img style="width:100%; height:30%;" src="https://img.freepik.com/premium-photo/family-watching-funny-video-digital-tablet-family-christmas-xmas-technology-people-concept_136403-15163.jpg?w=900" alt="card image"></p>
+                                    <h4 class="card-title">ProTel Max 501</h4>
+                                    <p class="card-text">₹ 501/month<br>Postpaid</p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="backside">
+                            <div class="card">
+                                <div class="card-body text-center mt-4">
+                                    <h4 class="card-title">BENEFITS</h4>
+                                    <ul class="card-text" style="text-align: left;">
+                                        <li>1) 50 GBData with Rollover</li><br>
+                                        <li>2) 100SMS Per Day </li><br>
+                                        <li>3) UnlimitedLocal and Roaming Calls N/A</li><br>
+                                        <li>4) Amazon Prime,Spotify </li><br>
+                                    </ul>
+                                    <ul class="list-inline" style="font-size: 25px; padding: auto;">
+                                        <li class="list-inline-item">
+                                                <i class="fa fa-amazon"></i>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <i class="fa fa-spotify"></i>
+                                    </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ./PLAN 1 -->
+            <!-- PLAN 2 -->
+        
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <div class="image-flip" >
+                    <div class="mainflip flip-0">
+                        <div class="frontside">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <p><img style="width:100%; height:30%;" src="https://img.freepik.com/premium-photo/elderly-old-couple-using-modern-laptop-chat-with-their-grandson-grandmother-grandfather-using-modern-technology_482257-22511.jpg?w=900" alt="card image"></p>
+                                    <h4 class="card-title">ProTel Max 701</h4>
+                                    <p class="card-text">₹ 701/month<br>Postpaid</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="backside">
+                            <div class="card">
+                                <div class="card-body text-center mt-4">
+                                    <h4 class="card-title">BENEFITS</h4>
+                                    <ul class="card-text" style="text-align: left;">
+                                        <li>1) 75 GBData with Rollover</li><br>
+                                        <li>2) 100SMS Per Day </li><br>
+                                        <li>3) UnlimitedLocal and Roaming Calls N/A</li><br>
+                                        <li>4) Prime,Spotify & FilmsNow (15 days) </li><br>
+                                    </ul>
+                                    <ul class="list-inline" style="font-size: 25px; padding: auto;">
+                                        <li class="list-inline-item">
+                                                <i class="fa fa-amazon"></i>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <i class="fa fa-spotify"></i>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <i class="fa fa-film"></i>
+                                    </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ./PLAN 2 -->
+            <!-- PLAN 3 -->
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <div class="image-flip" >
+                    <div class="mainflip flip-0">
+                        <div class="frontside">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <p><img style="width:100%; height:30%;" src="https://img.freepik.com/free-photo/group-friends-having-coffee_23-2148395337.jpg?w=900&t=st=1696748225~exp=1696748825~hmac=0b558995a951bdefec5001491820c9a77b7a0e4caaf634af57505e626095af74" alt="card image"></p>
+                                    <h4 class="card-title">ProTel Max 901</h4>
+                                    <p class="card-text">₹ 901/month <br>Postpaid</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="backside">
+                            <div class="card">
+                                <div class="card-body text-center mt-4">
+                                    <h4 class="card-title">BENEFITS</h4>
+                                    <ul class="card-text" style="text-align: left;">
+                                        <li>1) 100 GBData with Rollover</li><br>
+                                        <li>2) 100SMS Per Day </li><br>
+                                        <li>3) UnlimitedLocal and Roaming Calls N/A</li><br>
+                                        <li>4) Prime,Spotify & FilmsNow(45 days) </li><br>
+                                    </ul>
+                                    <ul class="list-inline" style="font-size: 25px; padding: auto;">
+                                        <li class="list-inline-item">
+                                                <i class="fa fa-amazon"></i>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <i class="fa fa-spotify"></i>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <i class="fa fa-film"></i>
+                                </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ./PLAN 3 -->
+            <!-- PLAN 4 -->
+            <!-- PLANS 1 -->
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <div class="image-flip" >
+                    <div class="mainflip flip-0">
+                        <div class="frontside">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <p><img style="width:100%; height:30%;" src="https://img.freepik.com/free-photo/close-up-child-spending-time-with-parents_23-2149241065.jpg?w=900&t=st=1696748354~exp=1696748954~hmac=9683929b5ef850d20037ec5b4c503d20de485f536f4b715047dd05a87ce48361" alt="card image"></p>
+                                    <h4 class="card-title">ProTel Max 399</h4>
+                                    <p class="card-text">₹ 399/month <br> Prepaid</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="backside">
+                            <div class="card">
+                                <div class="card-body text-center mt-4">
+                                    <h4 class="card-title">BENEFITS</h4>
+                                    <ul class="card-text" style="text-align: left;">
+                                        <li>1) 40 GBData with Rollover</li><br>
+                                        <li>2) 100SMS Per Day </li><br>
+                                        <li>3) UnlimitedLocal and Roaming Calls N/A</li><br>
+                                        <li>4) Amazon Prime  N/A</li><br>
+                                    </ul>
+                                    <ul class="list-inline" style="font-size: 25px; padding: auto;">
+                                        <li class="list-inline-item">
+                                                <i class="fa fa-amazon"></i>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ./PLAN 4 -->
+            <!-- PLAN 5 -->
+            <!-- PLANS 1 -->
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <div class="image-flip" >
+                    <div class="mainflip flip-0">
+                        <div class="frontside">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <p><img style="width:100%; height:30%;" src="https://img.freepik.com/premium-photo/cute-girl-using-tablet-with-dad-home_136403-9455.jpg?w=900" alt="card image"></p>
+                                    <h4 class="card-title">ProTel Max 599</h4>
+                                    <p class="card-text">₹ 599/month <BR> Prepaid</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="backside">
+                            <div class="card">
+                                <div class="card-body text-center mt-4">
+                                    <h4 class="card-title">BENEFITS</h4>
+                                    <ul class="card-text" style="text-align: left;">
+                                        <li>1) 60 GBData with Rollover</li><br>
+                                        <li>2) 100SMS Per Day </li><br>
+                                        <li>3) UnlimitedLocal and Roaming Calls N/A</li><br>
+                                        <li>4) Amazon Prime,Spotify </li><br>
+                                    </ul>
+                                    <ul class="list-inline" style="font-size: 25px; padding: auto;">
+                                        <li class="list-inline-item">
+                                                <i class="fa fa-amazon"></i>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <i class="fa fa-spotify"></i>
+                                    </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ./PLAN 5 -->
+            <!-- PLAN 6 -->
+            <!-- PLANS 1 -->
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <div class="image-flip" >
+                    <div class="mainflip flip-0">
+                        <div class="frontside">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <p><img style="width:100%; height:50%;" src="https://img.freepik.com/premium-photo/man-woman-are-looking-tablet-they-are-looking-tablet_583952-10149.jpg?w=900" alt="card image"></p>
+                                    <h4 class="card-title">ProTel Max 999</h4>
+                                    <p class="card-text">₹ 999/month<br>Prepaid</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="backside">
+                            <div class="card">
+                                <div class="card-body text-center mt-4">
+                                    <h4 class="card-title">BENEFITS</h4>
+                                    <ul class="card-text" style="text-align: left;">
+                                        <li>1) 100 GBData with Rollover</li><br>
+                                        <li>2) 100SMS Per Day </li><br>
+                                        <li>3) UnlimitedLocal and Roaming Calls N/A</li><br>
+                                        <li>4) Amazon Prime,Spotify & FilmsNow </li><br>
+                                    </ul>
+                                    <ul class="list-inline" style="font-size: 25px; padding: auto;">
+                                        <li class="list-inline-item">
+                                                <i class="fa fa-amazon"></i>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <i class="fa fa-spotify"></i>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <i class="fa fa-film"></i>
+                                </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ./PLAN 6 -->
+
+        </div>
+    </div>
+</section>
+<!-- PLANS -->
+
+<!---------------------------banner-------------------------------->
+
+<br><br><br>
+<div class="j-fullwidth-banner-container">
+    <div class="j-contentBlock j-contentBlock__size-m">
+      <div class="j-contentBlock__body"><h1 style="display: block;">Step into the new world with our services..</h1>
+        <div class="j-contentBlock__content">
+            <h1 style="display: block;">Reimagine the way you live !!!</h1>
+          <!-- <h3 class="j-contentBlock__title">Realise your ambitions with ProTel</h3> -->
+          <div class="j-contentBlock__description">
+            <!-- <p>Re-defining digital life with ProTel</p> -->
+            
+          </div>
+          <!-- <div class="j-button-group">
+            <button class="j-button primary" routerLink="/search" >Click Here</button>
+          </div> -->
+        </div>
+      </div>
+    </div>
+</div>
+
+
+<!----------------------------end of banner------------------------>
+
+
+
+
+<section class="pricing-tables content-area">
+  <div class="container">
+      <!-- Main title -->
+      <div class="main-title text-center">
+          <h1>PRICING TABLES</h1>
+          <p>Find the best plan for you!!!!</p>
+      </div>
+      <div class="row">
+          <div class="col-sm-12 col-lg-4 col-md-4">
+              <div class="pricing">
+                  <div class="price-header" style="background-image: url(https://img.freepik.com/premium-photo/rectangle-red-neon-light-black-wall_892776-128.jpg?w=1060);display: flex;">
+                      <div class="title" style="font-weight: 700;font-size:30px;color: azure;">Basic Fiber Plan starts @ ₹999</div>
+                  </div>
+                  <div class="content">
+                      <ul>
+                          <li>Enjoy unlimited wi-fi at ₹999</li>
+                          <li>Up to 200 Mbps speed</li>
+                          <li>unlimited calls</li>
+                          <li>OTT apps</li>
+                          <li>Entertainment</li>
+                      </ul>
+                      <div class="button"><a href="#" class="btn btn-outline pricing-btn">Get Started</a></div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-sm-12 col-lg-4 col-md-4">
+              <div class="pricing featured">
+                  <div class="listing-badges">
+                      <span class="featured">Featured</span>
+                  </div>
+                  <div class="price-header price-header-2" style="background-image: url(https://img.freepik.com/premium-photo/generative-ai_885800-1407.jpg?w=1060);display: flex;">
+                      <div class="title" style="font-weight: 700;font-size:30px;color: azure;">Basic Prepaid Plan Starts @ ₹399</div>
+                  </div>
+                  <div class="content">
+                      <ul>
+                        <li>Enjoy 40 GB data at ₹399</li>
+                        <li>Up to 100 Mbps speed</li>
+                        <li>unlimited calls</li>
+                        <li>spotify subscription</li>
+                        <li>Entertainment</li>
+                      </ul>
+                      <div class="button"><a href="#" class="btn btn-outline pricing-btn button-theme">Get Started</a></div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-sm-12 col-lg-4 col-md-4">
+              <div class="pricing">
+                <div class="price-header" style="background-image: url(https://img.freepik.com/premium-photo/rectangle-red-neon-light-black-wall_892776-128.jpg?w=1060);display: flex;">
+                    <div class="title" style="font-weight: 700;font-size:30px;color: azure;">Basic Postpaid Plan starts @ ₹501</div>
+                </div>
+                  <div class="content">
+                      <ul>
+                        <li>Enjoy 50 GB data at ₹501</li>
+                        <li>Up to 100 Mbps speed</li>
+                        <li>unlimited calls</li>
+                        <li>ott subscriptions</li>
+                        <li>Entertainment</li>
+                      </ul>
+                      <div class="button"><a href="#" class="btn btn-outline pricing-btn">Get Started</a></div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+ <!-- </div> -->
+
+  <!-- FOOTER -->
+  <footer class="bg-light text-center text-lg-start" >
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-image:url(https://img.freepik.com/premium-photo/rectangle-red-neon-light-black-wall_892776-128.jpg?w=1060); color: azure;">
+      © 2023 Copyright:ProTel.com
+      <!-- <a class="text-dark" style="color:azure" >ProTel.com</a> -->
+    </div>
+    <!-- Copyright -->
+  </footer>
+</main>
+<script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+
+    </body>
+</html>

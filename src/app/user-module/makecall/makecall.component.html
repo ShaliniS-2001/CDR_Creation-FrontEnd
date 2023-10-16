@@ -1,0 +1,156 @@
+
+
+<br><br><br>
+<html>
+    <head>
+        <title>My Page</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!-- <script src="script.js"></script> -->
+    </head>
+
+<br><br>
+<div class="j-fullwidth-banner-container">
+    <div class="j-contentBlock j-contentBlock__size-m">
+      <div class="j-contentBlock__body">
+        <div class="j-contentBlock__content">
+          <!-- <h3 class="j-contentBlock__title">Realise your ambitions with JioBusiness</h3> -->
+          <div class="j-contentBlock__description">
+            <p>TO MAKE VIEW HISTORY CLICK THE BUTTON</p>
+            
+          </div>
+          <div class="j-button-group">
+            <button class="j-button primary" aria-label="Know more" routerLink="/viewhistory">VIEW HISTORY</button>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+<body>
+<h2>DIAL TO MAKE A CALL</h2>
+<div class="dial-pad-wrap">
+	
+	<div class="left-pan" [ngStyle]="{width:fullscreen?'100%':'45%'}" >
+		<div class="calling" [ngClass]="{'active':callingSectionVisible}">
+			<div class="title fadeIn animated infinite">Calling</div>
+			<div class="photo bounceInDown animated"></div>
+			<div class="name rubberBand animated">{{dialScreenContent}}</div>
+			<div class="number"></div>
+			<div class="timer rubberBand animated">{{formatTimer()}}</div>
+			<div class="action">
+				<div class="lnk"><button class="btn fadeInLeftBig animated"><i class="fa fa-mic"></i></button></div>
+				<div class="lnk"><button class="btn fadeInLeftBig animated"><i class="fa fa-vol"></i></button></div>
+				<div class="lnk"><button class="btn fadeInRightBig animated"><i class="fa fa-camera"></i></button></div>
+				<div class="lnk"><button class="btn fadeInRightBig animated"><i class="fa fa-video-camera"></i></button></div>
+			</div>
+			<div class="call-end bounceInUp animated">
+				<button class="btn" (click)="endCall()"><i class="fa fa-phone"></i></button>
+			</div>
+		</div>
+	</div>
+	<div class="dial-pad">
+		<div class="dial-screen" contenteditable="false">{{dialScreenContent}}</div>
+		<div class="dial-table">
+			<div class="dial-table-row">
+				<div class="dial-table-col">
+					<div class="dial-key-wrap" data-key="1">
+						<div class="dial-key" (click)="displayDialKey('1')">1</div>
+						<div class="dial-sub-key">&nbsp;</div>
+					</div>
+				</div>
+				<div class="dial-table-col">
+					<div class="dial-key-wrap" data-key="2">
+						<div class="dial-key" (click)="displayDialKey('2')">2</div>
+						<div class="dial-sub-key">abc</div>
+					</div>
+				</div>
+				<div class="dial-table-col">
+					<div class="dial-key-wrap" data-key="3">
+						<div class="dial-key" (click)="displayDialKey('3')">3</div>
+						<div class="dial-sub-key">def</div>
+					</div>
+				</div>
+			</div>
+			<div class="dial-table-row">
+				<div class="dial-table-col">
+					<div class="dial-key-wrap" data-key="4">
+						<div class="dial-key" (click)="displayDialKey('4')">4</div>
+						<div class="dial-sub-key">ghi</div>
+					</div>
+				</div>
+				<div class="dial-table-col">
+					<div class="dial-key-wrap" data-key="5">
+						<div class="dial-key" (click)="displayDialKey('5')">5</div>
+						<div class="dial-sub-key">jkl</div>
+					</div>
+				</div>
+				<div class="dial-table-col">
+					<div class="dial-key-wrap" data-key="6">
+						<div class="dial-key" (click)="displayDialKey('6')">6</div>
+						<div class="dial-sub-key">mno</div>
+					</div>
+				</div>
+			</div>
+			<div class="dial-table-row">
+				<div class="dial-table-col">
+					<div class="dial-key-wrap" data-key="7">
+						<div class="dial-key" (click)="displayDialKey('7')">7</div>
+						<div class="dial-sub-key">pqrs</div>
+					</div>
+				</div>
+				<div class="dial-table-col">
+					<div class="dial-key-wrap" data-key="8">
+						<div class="dial-key" (click)="displayDialKey('8')">8</div>
+						<div class="dial-sub-key">tuv</div>
+					</div>
+				</div>
+				<div class="dial-table-col">
+					<div class="dial-key-wrap" data-key="9">
+						<div class="dial-key" (click)="displayDialKey('9')">9</div>
+						<div class="dial-sub-key">wxyz</div>
+					</div>
+				</div>
+			</div>
+			<div class="dial-table-row">
+				<div class="dial-table-col">
+					<div class="dial-key-wrap" data-key="*">
+						<div class="dial-key" (click)="displayDialKey('*')">*</div>
+						<div class="dial-sub-key">&nbsp;</div>
+					</div>
+				</div>
+				<div class="dial-table-col">
+					<div class="dial-key-wrap" data-key="0">
+						<div class="dial-key" (click)="displayDialKey('0')">0</div>
+						<div class="dial-sub-key">+</div>
+					</div>
+				</div>
+				<div class="dial-table-col">
+					<div class="dial-key-wrap" data-key="#">
+						<div class="dial-key" (click)="displayDialKey('#')">#</div>
+						<div class="dial-sub-key">&nbsp;</div>
+					</div>
+				</div>
+			</div>
+			<div class="dial-table-row no-sub-key">
+				<div class="dial-table-col">
+				</div>
+				<div class="dial-table-col">
+					<div class="dial-key-wrap" data-key="call" (click)="toggleCallingSection()">
+						<div class="dial-key"><i class="fa fa-phone"></i></div>
+						<div class="dial-sub-key">Call</div>
+					</div>
+				</div>
+				<div class="dial-table-col">
+					<div class="dial-key-wrap" data-key="back" (click)="displayDialKey('back')">
+						<div class="dial-key"><i class="fa fa-arrow-left"></i></div>
+						<div class="dial-sub-key">Back</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div><br><br>
+
+
+</body>
+</html>

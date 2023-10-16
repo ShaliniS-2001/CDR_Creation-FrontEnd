@@ -1,0 +1,495 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Playfair Display', serif;
+}
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', san-serif;
+}
+
+body{
+  overflow: hidden;
+}
+
+section{
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  
+}
+
+section .color{
+  position: absolute;
+ 
+}
+
+
+
+.box{
+  position: relative;
+  background-image: url(https://img.freepik.com/premium-photo/digital-marketing-seo-photo-concept-idea-with-special-infographic-content_41466-859.jpg?w=996);
+  border-radius: 10px;
+}
+
+.box .square{
+  position: absolute;
+  backdrop-filter: blur(3px);
+  box-shadow: 0 35px 45px rgba(0,0,0,0.1);
+  border: 2px solid rgba(255,255,255,0.5);
+  border-right: 1px solid rgba(255,255,255,0.2);
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  background-color: rgba(255,255,255,0.1);
+  border-radius: 10px;
+  animation: animate 10s linear infinite;
+  animation-delay: calc(-1s * var(--i));
+}
+
+@keyframes animate{
+  0%, 100%{
+    transform: translateY(-40px);
+  }
+  50%{
+    transform: translateY(40px);
+  }
+}
+
+.box .square:nth-child(1){
+  top: -50px;
+  right: -60px;
+  width: 100px;
+  height: 100px;
+}
+
+.box .square:nth-child(2){
+  top: 150px;
+  left: -100px;
+  width: 120px;
+  height: 120px;
+  z-index: 2;
+}
+
+.box .square:nth-child(3){
+  bottom: 50px;
+  right: -60px;
+  width: 80px;
+  height: 80px;
+  z-index: 2;
+}
+
+.box .square:nth-child(4){
+  bottom: -80px;
+  left: 100px;
+  width: 50px;
+  height: 50px;
+}
+
+.box .square:nth-child(5){
+  top: -80px;
+  left: 140px;
+  width: 60px;
+  height: 60px;
+}
+
+.container{
+  position: relative;
+  width: 800px;
+  min-height: 400px;
+  background-color: rgba(255,255,255,0.1);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 25px 45px rgba(0,0,0,0.1);
+  border: 1px solid rgba(255,255,255,0.5);
+  border-right: 1px solid rgba(255,255,255,0.2);
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.form{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 40px;
+}
+
+.form h2{
+  position: relative;
+  font-size: 24px;
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 40px;
+}
+
+.form h2:before{
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 80px;
+  height: 4px;
+  background-color: #fff;
+}
+
+.form .inputBox{
+  width: 100%;
+  margin-top: 20px;
+}
+
+.form .inputBox input{
+  width: 100%;
+  background-color: rgba(255,255,255,0.2);
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  
+  border: 1px solid rgba(255,255,255,0.5);
+  border-right: 1px solid rgba(255,255,255,0.2);
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  font-size: 16px;
+  letter-spacing: 1px;
+  color: #fff;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.form .inputBox input::placeholder{
+  color: #fff;
+}
+
+.form .inputBox input[type="submit"]{
+  
+  color: #fff;
+  max-width: 300px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  font-weight: 600;
+  border-radius: 10px;
+}
+
+.forget{
+  margin-top: 5px;
+  color: #fff;
+}
+
+.forget a{
+  color: #fff;
+  font-weight: 600;
+}
+
+
+
+/* Animation for the button */
+.inputBox input[type="submit"] {
+  transition: transform 0.3s ease-in-out; /* Add a smooth transition */
+}
+
+/* Optional: Add a subtle pulsating animation to the button */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.inputBox input[type="submit"]:hover {
+  animation: pulse 1s infinite; /* Apply the pulsating animation on hover */
+}
+
+.inputBox input[type="number"]:hover {
+  animation: pulse 1.5s infinite; /* Apply the pulsating animation on hover */
+}
+
+
+  /* ------------------------------animation--------------------------------------------- */
+ 
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;600&display=swap");
+.ani-text {
+    text-align: center;
+    animation: moveText 3s linear infinite; /* Adjust the animation duration and timing function */
+    font-family:'Playfair Display', serif;
+    font-size: 54px; /* Adjust the font size */
+    font-weight: 650; /* Adjust the font weight */
+    color: #06060a; /* Text color */
+    font-style:italic;
+    text-transform: uppercase; /* Uppercase text */
+    
+}
+
+
+
+/*------------------------------------- BANNER--------------------------------------------------- */
+
+.j-fullwidth-banner-container {
+  background-color: #f9f9f9;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  background-image: url('https://img.freepik.com/free-photo/finger-pressing-smartphone-screen_53876-105170.jpg?w=900&t=st=1696677714~exp=1696678314~hmac=d7ed6019161b682a93493d517169d2d7aeab709dd87957d06e018ee7e655f20a');
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
+  height: 430px; /* Adjust the height as needed */
+  background-position: center bottom; /* Adjust the position as needed */
+  border-radius: 20px; /* Adjust border radius as needed */
+  margin: 45px;
+  max-width: 100%;
+}
+.j-contentBlock__body{
+  max-width: 100%;
+}
+
+#header{
+  margin:20px;
+  font-family:'Playfair Display', serif;
+}
+#header>h1{
+  text-align:center;
+  font-weight: 400px;
+  font-size:4rem;
+  font-family:'Playfair Display', serif;
+}
+#header>p{
+  text-align:center;
+  font-size:1.5rem;
+  font-style:italic;
+  font-family:'Playfair Display', serif;
+}
+
+
+/*---------------------------------------- TABLE------------------------------------------------ */
+
+.custom-table {
+
+  max-width: 100%;
+  overflow-x: auto; /* Add horizontal scroll if needed */
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+}
+
+.custom-table th, .custom-table td {
+
+  padding: 15px;
+  text-align: left;
+  border: 1px solid #ccc;
+
+}
+.custom-table th {
+
+  background-image: url(https://img.freepik.com/premium-vector/abstract-red-lines-black-background_622952-51.jpg?w=1060);
+  background-repeat: no-repeat;
+  border-bottom: 2px solid #ccc;
+  color: whitesmoke;
+
+}
+.custom-table tbody tr:nth-child(odd) {
+
+  background-color: #f9f9f9;
+
+}
+.custom-table tbody tr:nth-child(even) {
+
+  background-color: #eaeaea;
+
+}
+.custom-table tbody tr:hover {
+  background-color: #f5f5f5;
+  transform: scale(1.02);
+  transition: background-color 0.3s, transform 0.3s;
+
+}
+.custom-table i {
+  margin-right: 5px;
+}
+
+
+
+.card {
+  box-shadow: 0 0px 1px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+}
+.card .card-body {
+  display: flex;
+  flex-flow: row wrap;
+  padding: 30px;
+}
+.card header {
+  flex: 100%;
+}
+.card .meta {
+  margin-bottom: 22px;
+}
+.card .chips {
+  align-self: flex-end;
+}
+.card .featured-image {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  overflow: hidden;
+  width: 100%;
+  height: 300px;
+}
+
+@media only screen and (min-width: 768px) {
+  .card {
+    flex-direction: row;
+    max-height: 279px;
+  }
+  .card h3 {
+    font-size: calc(100% + 1vw);
+  }
+  .card .featured-image {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 0;
+    max-width: 390px;
+    max-height: 279px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .card h3 {
+    font-size: 32px;
+  }
+}
+* {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.card h3 {
+  font-size: 32px;
+  line-height: 1.2;
+  font-weight: bold;
+  color: #222;
+  margin: 0.5em 0;
+}
+
+.pre-heading {
+  color: #444;
+  font-size: 20px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.meta {
+  color: #555;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.author {
+  text-transform: uppercase;
+}
+
+ul {
+  display: block;
+  margin: 0 auto;
+  max-width: 1160px;
+  padding: 30px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.chips {
+  white-space: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  -ms-overflow-style: none;
+
+
+  font-size: 24px; /* Adjust font size as needed */
+  background-color: darkred; /* Set button background color to red */
+  color: white; /* Set button text color to white */
+  padding: 10px 20px; /* Adjust padding as needed */
+  border: none;
+  border-radius: 10px; /* Adjust border radius as needed */
+  cursor: pointer;
+}
+
+.chips::-webkit-scrollbar {
+  display: none;
+}
+
+.chip {
+  display: inline-block;
+  position: relative;
+  font-size: 16px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.4;
+  white-space: nowrap;
+  color: white;
+  background: darked;
+  border-radius: 25px;
+  margin-right: 8px;
+  padding: 5px 12px;
+  max-height: 32px;
+}
+.chip.large {
+  text-transform: uppercase;
+  color: black;
+  border: 1px solid #E0E0E0;
+  background: white;
+  padding: 10px 15px;
+  max-height: 44px;
+}
+.chip input {
+  margin-bottom: 0 !important;
+  height: 22px !important;
+  background-color: transparent !important;
+  padding: 3px 0 0 0 !important;
+}
+.chip input::placeholder {
+  color: black;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+a.chip {
+  cursor: pointer;
+}
+a.chip:hover, a.chip:visited, a.chip:active {
+  color: white;
+}
+
+a.chip.large:visited, a.chip.large:hover, a.chip.large:active {
+  color: black;
+}
+.j-button {
+  font-size: 24px; /* Adjust font size as needed */
+  background-color: darkred; /* Set button background color to red */
+  color: white; /* Set button text color to white */
+  padding: 10px 20px; /* Adjust padding as needed */
+  border: none;
+  border-radius: 10px; /* Adjust border radius as needed */
+  cursor: pointer;
+}
+.j-button:hover {
+  background-color: rgb(87, 2, 2); /* Change background color on hover */
+}

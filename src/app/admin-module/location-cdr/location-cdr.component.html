@@ -1,0 +1,159 @@
+<br><br><br>
+<!DOCTYPE html>
+<html lang="en">
+<body>
+ 
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full-Width Div with Big Text</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+  
+      .full-width-div {
+        width: 100%;
+        height: 450px;
+        background-image: url('https://img.freepik.com/premium-vector/abstract-red-light-shadow-cross-line-dark-grey-design-modern-futuristic-background_33869-1979.jpg');
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white; /* Text color */
+      }
+  
+      .text {
+        font-size: 4rem; /* Adjust the font size as needed */
+        font-weight: bold;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add text shadow for better visibility */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="full-width-div">
+      <div class="text">
+        <div class="ani-text" style="color: white;">LOCATION CDR GENERATATION</div> 
+        <div id="header">
+          <p>All set to explore the Location CDRs ??</p>
+        </div>
+      </div>
+    </div>
+  </body>
+  </html>
+<body>
+    <section>
+        <div class="box">
+          <div class="square" style="--i:0;"></div>
+          <div class="square" style="--i:1;"></div>
+          <div class="square" style="--i:2;"></div>
+          <div class="square" style="--i:3;"></div>
+          <div class="square" style="--i:4;"></div>
+          <div class="container">
+            <div class="form">
+              <h2>CDR GENERATION</h2>
+              <form (ngSubmit)="onSubmit()">
+                <div class="inputBox">
+                  <input type="number" placeholder="Enter the number of CDRs" name="value" [(ngModel)]='value' required>
+                </div>
+                <div class="inputBox">
+                  <input type="submit" value="GENERATE CDRs">
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    <!-- <h1>Generate Call Detail Records (CDRs)</h1>
+    <form (ngSubmit)="onSubmit()">
+        <label for="n">Enter the number of CDRs to generate:</label>
+        <input type="number" id="value" name="value" [(ngModel)]='value' required>
+        <br>
+        <input type="submit" value="Generate CDRs">
+    </form> -->
+    <br><br>
+    <div class="tab" *ngIf="locationArray.length > 0">
+        <div id="header">
+          <h1>LOCATION CDR</h1>
+          <p>The below table generates the CDR for Location</p>
+        </div>
+    <div class="table-container" style="overflow-x: auto;">      
+    <table *ngIf="locationArray.length > 0"  class="custom-table" style="margin-left: 10px;margin-right: 10px;">
+        <thead class="table__head">
+            <tr class="winner__table">
+                <th>Call ID</th>
+                <th>Call Type</th>
+                <th>Call Result</th>
+                <th>Start Time</th>
+                <th>End Time</th>
+                <th>Duration</th>
+                <th>Caller Number</th>
+                <th>Caller Location</th>
+                <th>Callee Number</th>
+                <th>Callee Location</th>
+                <th>Call Direction</th>
+                <th>Signal Strength</th>
+                <th>Cell Tower</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let location of locationArray">
+                <td>{{ location.callId }}</td>
+                <td>{{ location.callType }}</td>
+                <td>{{ location.callResult }}</td>  
+                <td>{{ location.startTimeStr }}</td>
+                <td>{{ location.endTimeStr }}</td>
+                <td>{{ location.duration }}</td>
+                <td>{{ location.callerNumber }}</td>
+                <td>Latitude:{{ location.callerLatitude }}
+                    Longitude:{{ location.callerLongitude }}
+                </td>
+                <td>{{ location.calleeNumber }}</td>
+                <td>Latitude:{{ location.calleeLongitude }}
+                    Longitude:{{ location.calleeLatitude }}
+                </td>
+                <td>{{ location.callDirection }}</td>
+                <td>{{ location.signalStrength }}dBM</td>
+                <td>{{ location.cellTower }}</td>
+            </tr>
+        </tbody>
+    </table>
+   </div> 
+   </div>
+
+    <br><br>
+    <ul *ngIf="locationArray.length > 0"> 
+      <li class="card">
+          <a 
+              href="#" 
+              class="featured-image" 
+              style="background-image:url('https://img.freepik.com/free-photo/storage-data-information-download-concept_53876-120044.jpg?w=826&t=st=1696690283~exp=1696690883~hmac=bc5715babe84dca2d65bf36036372db4bcd0a406ef3bcad5c3f793e096891ec8')">
+          </a>
+          <article class="card-body">
+              <header>
+                  <a href="utilidata-national-governors-association-meeting">
+  
+                      <div class="title">
+                          <h3>To download the Location-CDR CSV Click the below button</h3>
+                      </div>
+                      <p class="meta">
+                          <!-- <span class="author">Utilidata</span> -->
+                          <!-- <span> | </span>
+                          <time class="updated" datetime="" itemprop="datePublished">July 27, 2017</time> -->
+                      </p>
+                  </a>
+              </header>
+              <div class="chips">
+                  <button class="j-button primary" (click)="download_cdr()">DOWNLOAD CSV</button>
+              </div>
+          </article>
+      </li>
+          
+      </ul>
+    
+</body> 

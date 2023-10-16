@@ -1,0 +1,150 @@
+<br><br><br>
+<!DOCTYPE html>
+<html lang="en">
+<body>
+ 
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full-Width Div with Big Text</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+  
+      .full-width-div {
+        width: 100%;
+        height: 450px;
+        background-image: url('https://img.freepik.com/premium-vector/abstract-black-red-line-light-banner-slash-grey-design-modern-futuristic-background-vector_33869-2673.jpg?w=996');
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white; /* Text color */
+      }
+  
+      .text {
+        font-size: 4rem; /* Adjust the font size as needed */
+        font-weight: bold;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add text shadow for better visibility */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="full-width-div">
+      <div class="text">
+        <div class="ani-text" style="color: white;">VoIP AUDIO CDR GENERATATION</div> 
+        <div id="header">
+          <p>All set to explore the VoIP Audio CDRs ??</p>
+        </div>
+      </div>
+    </div>
+  </body>
+  </html>
+  
+
+<section>
+  <div class="box">
+    <div class="square" style="--i:0;"></div>
+    <div class="square" style="--i:1;"></div>
+    <div class="square" style="--i:2;"></div>
+    <div class="square" style="--i:3;"></div>
+    <div class="square" style="--i:4;"></div>
+    <div class="container">
+      <div class="form">
+        <h2>CDR GENERATION</h2>
+        <form (ngSubmit)="onSubmit()">
+          <div class="inputBox">
+            <input type="number" placeholder="Enter the number of CDRs" name="value" [(ngModel)]='value' required>
+          </div>
+          <div class="inputBox">
+            <input type="submit" value="GENERATE CDRs">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+    <!-- <h1>Generate Call Detail Records (CDRs)</h1>
+    <form (ngSubmit)="onSubmit()">
+        <label for="n">Enter the number of CDRs to generate:</label>
+        <input type="number" id="value" name="value" [(ngModel)]='value' required>
+        <br>
+        <input type="submit" value="Generate CDRs">
+    </form> -->
+    <br><br>
+    <div class="tab" *ngIf="voipArray.length > 0">
+      <div id="header">
+        <h1>VoIP AUDIO CDR</h1>
+        <p>The below table generates the CDR for VoIP Audio</p>
+      </div>
+    <table *ngIf="voipArray.length > 0"  class="custom-table" style="margin-left: 10px;margin-right: 10px;">
+        <thead class="table__head">
+          <tr class="winner__table">
+            <th>Call Start Time</th>
+            <th>Call End Time</th>
+            <th>Duration (minutes)</th>
+            <th>Caller IP Address</th>
+            <th>Callee IP Address</th>
+            <th>Call Type</th>
+            <th>Call Result</th>
+            <th>Data Consumed</th>
+            <th>Call Direction</th>
+            <th>Call Quality Metrics</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let cdr of voipArray">
+            <td>{{ cdr.callStartTime }}</td>
+            <td>{{ cdr.callEndTime }}</td>
+            <td>{{ cdr.duration }}</td>
+            <td>{{ cdr.callerIpAddress }}</td>
+            <td>{{ cdr.calleeIpAddress }}</td>
+            <td>{{ cdr.callType }} Audio Call</td>
+            <td>{{cdr.callResult}}</td>
+            <td>{{cdr.dataConsumed}}MB</td>
+            <td>{{ cdr.callDirection }}</td>
+            <td>
+              Jitter: {{ cdr.jitter }}<br>
+              Packet Loss: {{ cdr.packetLoss }}%
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>  
+
+    <br><br>
+
+    <ul *ngIf="voipArray.length > 0" > 
+      <li class="card">
+          <a 
+              href="#" 
+              class="featured-image" 
+              style="background-image:url('https://img.freepik.com/free-photo/storage-data-information-download-concept_53876-120044.jpg?w=826&t=st=1696690283~exp=1696690883~hmac=bc5715babe84dca2d65bf36036372db4bcd0a406ef3bcad5c3f793e096891ec8')">
+          </a>
+          <article class="card-body">
+              <header>
+                  <a href="utilidata-national-governors-association-meeting">
+  
+                      <div class="title">
+                          <h3>To download the VoIP CDR CSV Click the below button</h3>
+                      </div>
+                      <p class="meta">
+                      </p>
+                  </a>
+              </header>
+              <div class="chips">
+                  <button class="j-button primary" (click)="download_cdr()">DOWNLOAD CSV</button>
+              </div>
+          </article>
+      </li>
+          
+      </ul>
+ 
+    </body>
+</html>

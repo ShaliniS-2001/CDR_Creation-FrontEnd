@@ -83,7 +83,7 @@
         <h1>MMS CDR</h1>
         <p>The below table generates the CDR for MMS</p>
       </div>
-    <table *ngIf="mmsArray.length > 0"  class="custom-table" style="margin-left: 10px;margin-right: 10px;">
+    <table datatable [dtOptions]="dtoptions" *ngIf="mmsArray.length > 0"  class="custom-table" style="margin-left: 10px;margin-right: 10px;">
         <thead class="table__head">
           <tr  class="winner__table">
             <th>Message Timestamp</th>

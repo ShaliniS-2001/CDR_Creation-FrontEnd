@@ -13,6 +13,8 @@ export class LocationCdrComponent {
   locationArray:LocationCdr[]=[]
   // value:number=0
   value:any
+  //datatables
+  dtoptions: DataTables.Settings = {};
   constructor(private service:ServiceService){
   }
   onSubmit(){
@@ -24,6 +26,20 @@ export class LocationCdrComponent {
       console.error('Error:', error);       
     });
   }
+
+  
+//data tables
+ngOnInit(): void {
+  this.dtoptions = {
+    pagingType: 'full_numbers',
+    searching: true,
+    lengthChange: false,
+    language: {
+      searchPlaceholder: 'Search Here'
+    }
+  };
+  this.onSubmit();
+}
 
   download_cdr() {
     // Create a new Excel Workbook

@@ -20,6 +20,8 @@ import { LocationCdrComponent } from './location-cdr/location-cdr.component';
 import { SubscriberCdrComponent } from './subscriber-cdr/subscriber-cdr.component';
 import { CdrsComponent } from './cdrs/cdrs.component';
 
+import {DataTablesModule} from 'angular-datatables'
+
 @NgModule({
   declarations: [
     ViewComponent,
@@ -39,7 +41,7 @@ import { CdrsComponent } from './cdrs/cdrs.component';
   ],
   imports: [
     CommonModule,
-    AdminModuleRoutingModule,HttpClientModule,FormsModule
+    AdminModuleRoutingModule,HttpClientModule,FormsModule,DataTablesModule
   ]
 })
 export class AdminModuleModule { }

@@ -83,7 +83,7 @@
         <h1>VoIP AUDIO CDR</h1>
         <p>The below table generates the CDR for VoIP Audio</p>
       </div>
-    <table *ngIf="voipArray.length > 0"  class="custom-table" style="margin-left: 10px;margin-right: 10px;">
+    <table  datatable [dtOptions]="dtoptions" *ngIf="voipArray.length > 0"  class="custom-table" style="margin-left: 10px;">
         <thead class="table__head">
           <tr class="winner__table">
             <th>Call Start Time</th>

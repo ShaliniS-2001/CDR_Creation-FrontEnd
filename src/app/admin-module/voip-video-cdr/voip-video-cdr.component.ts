@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ServiceService } from 'src/app/service.service';
 import { VoipVideoCdr } from 'src/entity/voipVideoCdr';
 import * as XLSX from 'xlsx'; // Import the entire XLSX library
@@ -8,14 +8,29 @@ import * as XLSX from 'xlsx'; // Import the entire XLSX library
   templateUrl: './voip-video-cdr.component.html',
   styleUrls: ['./voip-video-cdr.component.css']
 })
-export class VoipVideoCdrComponent {
+export class VoipVideoCdrComponent implements OnInit{
 
   voipvideoArray:VoipVideoCdr[]=[]
-  
+  //datatables
+  dtoptions: DataTables.Settings = {};
   // value:number=0
   value:any
   constructor(private service:ServiceService){
   }
+
+  //data tables
+  ngOnInit(): void {
+    this.dtoptions = {
+      pagingType: 'full_numbers',
+      searching: true,
+      lengthChange: false,
+      language: {
+        searchPlaceholder: 'Search Here'
+      }
+    };
+    this.onSubmit();
+  }
+
 
   onSubmit(){
     this.service.displayVoipVideoCdr(this.value).subscribe((data) => {  
@@ -26,6 +41,7 @@ export class VoipVideoCdrComponent {
       console.error('Error:', error);       
     });
   }
+
 
   download_cdr() {
     // Create a new Excel Workbook

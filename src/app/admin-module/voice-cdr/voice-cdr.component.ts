@@ -11,8 +11,24 @@ export class VoiceCdrComponent {
   voiceArray:voiceCdr[]=[]
   // quantity:number=0
   quantity:any
-  constructor(private service:ServiceService){
-    
+
+  //datatables
+  dtoptions: DataTables.Settings = {};
+
+  constructor(private service:ServiceService){ 
+  }
+
+  //data tables
+  ngOnInit(): void {
+    this.dtoptions = {
+      pagingType: 'full_numbers',
+      searching: true,
+      lengthChange: false,
+      language: {
+        searchPlaceholder: 'Search Here'
+      }
+    };
+    this.onSubmit();
   }
 
   download_cdr() {

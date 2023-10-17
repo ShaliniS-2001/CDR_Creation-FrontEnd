@@ -86,7 +86,7 @@
         <h1>SUBSCRIBER'S CDR</h1>
         <p>The below table generates the CDR for Subscriber's Activity</p>
       </div>
-    <table *ngIf="subscriberArray.length > 0"  class="custom-table" style="margin-left: 10px;margin-right: 10px;">
+    <table datatable [dtOptions]="dtoptions" *ngIf="subscriberArray.length > 0"  class="custom-table" style="margin-left: 10px;margin-right: 10px;">
         <thead class="table__head">
           <tr class="winner__table">
             <th>Subscriber ID</th>

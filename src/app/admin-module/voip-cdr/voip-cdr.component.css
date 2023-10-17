@@ -318,8 +318,11 @@ section .color{
 }
 .custom-table i {
   margin-right: 5px;
+  margin-bottom: 20px; 
 }
-
+.table-container {
+  margin-bottom: 20px; /* Adjust the margin value as needed */
+}
 
 
 .card {

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ServiceService } from 'src/app/service.service';
 import { voipCdr } from 'src/entity/voipCdr';
 import * as XLSX from 'xlsx'; // Import the entire XLSX library
@@ -9,25 +9,39 @@ import * as XLSX from 'xlsx'; // Import the entire XLSX library
   templateUrl: './voip-cdr.component.html',
   styleUrls: ['./voip-cdr.component.css']
 })
-export class VoipCdrComponent {
+export class VoipCdrComponent implements OnInit{
 
   voipArray:voipCdr[]=[]
   // value:number=0
   value:any
 
-
+  //datatables
+  dtoptions: DataTables.Settings = {};
+  
   constructor(private service:ServiceService){
   }
 
+  //data tables
+  ngOnInit(): void {
+    this.dtoptions = {
+      pagingType: 'full_numbers',
+      searching: true,
+      lengthChange: false,
+      language: {
+        searchPlaceholder: 'Search Here'
+      }
+    };
+    this.onSubmit();
+  }
 
 
   onSubmit(){
-    this.service.displayVoipCdr(this.value).subscribe((data) => {  
+    this.service.displayVoipCdr(this.value).subscribe((data) => { 
       this.voipArray = data as voipCdr[];
       console.log(this.voipArray);
     },  
     (error) => {    
-      console.error('Error:', error);       
+      console.error('Error:', error);     
     });
   }
   download_cdr() {

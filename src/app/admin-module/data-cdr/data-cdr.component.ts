@@ -11,6 +11,8 @@ import * as XLSX from 'xlsx'; // Import the entire XLSX library
 export class DataCdrComponent {
   dataArray:dataCdr[]=[]
   // quantity:number=0
+  //datatables
+  dtoptions: DataTables.Settings = {};
   quantity:any
   constructor(private service:ServiceService){
   }
@@ -24,6 +26,21 @@ export class DataCdrComponent {
       console.error('Error:', error);       
     });
   }
+
+  //data tables
+  ngOnInit(): void {
+    this.dtoptions = {
+      pagingType: 'full_numbers',
+      searching: true,
+      lengthChange: false,
+      language: {
+        searchPlaceholder: 'Search Here'
+      }
+    };
+    this.onSubmit();
+  }
+
+
   download_cdr() {
     // Create a new Excel Workbook
     const workbook = XLSX.utils.book_new();

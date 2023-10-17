@@ -84,7 +84,7 @@
         <p>The below table generates the CDR for SMS</p>
       </div>
     <div class="table-container" style="overflow-x: auto;">   
-    <table  *ngIf="smsArray.length > 0"  class="custom-table" style="margin-left: 10px;margin-right: 10px;">
+    <table datatable [dtOptions]="dtoptions" *ngIf="smsArray.length > 0"  class="custom-table" style="margin-left: 10px;margin-right: 10px;">
         <thead class="table__head">
           <tr class="winner__table">
             <th>Timestamp</th>

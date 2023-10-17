@@ -14,6 +14,9 @@ export class RoamingVoiceCdrComponent {
   
   // value:number=0
   value:any
+  //datatables
+  dtoptions: DataTables.Settings = {};
+
   constructor(private service:ServiceService){
   }
 
@@ -25,6 +28,19 @@ export class RoamingVoiceCdrComponent {
     (error) => {    
       console.error('Error:', error);       
     });
+  }
+
+  //data tables
+  ngOnInit(): void {
+    this.dtoptions = {
+      pagingType: 'full_numbers',
+      searching: true,
+      lengthChange: false,
+      language: {
+        searchPlaceholder: 'Search Here'
+      }
+    };
+    this.onSubmit();
   }
 
   download_cdr() {

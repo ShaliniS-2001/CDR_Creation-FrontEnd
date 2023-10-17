@@ -9,7 +9,7 @@ export class ServiceService {
 
   constructor(private httpclient:HttpClient) { }
   
-  login:boolean=false;
+  // login:boolean=false;
 
   addUser(reg:register)
   {

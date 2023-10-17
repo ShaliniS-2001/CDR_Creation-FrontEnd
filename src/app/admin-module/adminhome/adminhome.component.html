@@ -1,5 +1,5 @@
 
-
+<div *ngIf="session.islogined()">
 <br><br><br>
 <div class="j-fullwidth-banner-container">
     <div class="j-contentBlock j-contentBlock__size-m">
@@ -145,7 +145,11 @@
     
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>    
+</div>
 
+<div *ngIf="!session.islogined()">
+    {{goToHome()}}
+</div>
 
 
 

@@ -11,34 +11,25 @@ import { SessionStorageService } from '../session-storage.service';
 export class LoginComponent {
   username:string=''
   password:string=''
-
+  msg:string=''
+  temp:string=''
   constructor(private router:Router,public service:ServiceService,public session:SessionStorageService){}
 
   onLoginSuccess() {
-  // const adminUsername="admin";
-  // const adminPassword="Admin@123";
-  //   const ename=this.username.trim();
-  //   const epass=this.password.trim();
-  
-  // if(ename && epass) {
-  //   if(this.username===adminUsername && this.password===adminPassword){
-  //     this.router.navigate(['/adminhome'])
-  //     this.service.login = true;
-  //   }
-
-  //   else{
-  //     this.router.navigate(['/userhome']);
-  //     this.service.login = true;
-  //   }
-  // }
-  // else{
-  //   console.log('enter valid pass');
-  // }
    
-  const temp=this.session.loginValidity(this.username,this.password)
-  if(temp)
-  this.router.navigate(['/adminhome'])
+  this.temp=this.session.loginValidity(this.username,this.password)
+  if(this.temp=="admin"){
+    this.router.navigate(['/adminhome'])
   }
+  else if(this.temp=="user"){
+    this.router.navigate(['/userhome'])
+  }
+  else{
+    this.msg="Enter the valid login credentials"
+    this.router.navigate(['/login'])  
+  }
+  }
+  
   
 }
 

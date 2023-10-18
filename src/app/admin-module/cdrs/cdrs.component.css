@@ -46,19 +46,19 @@ body {
     color: white;
     
 }
-/* Add this CSS to make the cards display horizontally */
+
 .card-container {
     display: flex;
-    flex-wrap: wrap; /* Allow cards to wrap to the next row */
+    flex-wrap: wrap;
     justify-content: space-around;
     padding: 10px;
-    max-width: 1440px; /* Adjust the max-width to fit six cards in a row */
+    max-width: 1440px; 
     max-height: 1000px;
-    margin: 0 auto; /* Center the card container on the page */
+    margin: 0 auto; 
 }
 
 .card-hover {
-    width: calc(16.66% - 40px); /* Calculate the width to fit six cards in a row with spacing */
+    width: calc(16.66% - 40px);
     height: 400px;
     margin: 10px;
     position: relative;
@@ -186,11 +186,11 @@ body {
     overflow: hidden;
     box-shadow: 0 0 32px -10px white;
 
-    /* Add the background image URL here */
+    
     background-image: url('https://img.freepik.com/premium-photo/side-view-attractive-woman-using-digital-tablet-city-street-night_231208-11467.jpg?w=360'); /* Replace 'your-image-url.jpg' with the actual URL of your background image */
-    background-size: cover; /* Adjust as needed */
-    background-position: center center; /* Adjust as needed */
-    background-repeat: no-repeat; /* Adjust as needed */
+    background-size: cover; 
+    background-position: center center;
+    background-repeat: no-repeat;
 }
 
 .card-hover img {
@@ -215,7 +215,6 @@ body {
     width: 100%;
     border-radius: 10px;
     background:url(https://img.freepik.com/premium-photo/abstract-lens-flare-black-background-red-defocused-lights-glowing-blurred-color-burst-festive-new-year-backdrop_279525-24066.jpg?w=900);
-    /*https://i0.wp.com/media.giphy.com/media/5ERaOy5fQEIAU/giphy.gif*/
     background-size: cover;
     font-size: 80px;
     color: #fff;
@@ -249,7 +248,7 @@ body {
         transform: translateX(0);
     }
     50% {
-        transform: translateX(30px); /* Adjust the distance and direction of movement */
+        transform: translateX(30px);
     }
     100% {
         transform: translateX(0);
@@ -257,14 +256,14 @@ body {
 }
 @import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;600&display=swap");
 .ani-text {
-    animation: moveText 3s linear infinite; /* Adjust the animation duration and timing function */
+    animation: moveText 3s linear infinite; 
     font-family:'Playfair Display', serif;
-    font-size: 54px; /* Adjust the font size */
-    font-weight: 650; /* Adjust the font weight */
-    color: #fafafb; /* Text color */
+    font-size: 54px; 
+    font-weight: 650;
+    color: #fafafb;
     font-style:italic;
     
-    text-transform: uppercase; /* Uppercase text */
+    text-transform: uppercase;
     
 }
 

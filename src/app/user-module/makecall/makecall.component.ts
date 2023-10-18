@@ -16,7 +16,6 @@ export class MakecallComponent {
 
   toggleCallingSection() {
     this.callingSectionVisible = true;
-    // this.initiateCall();
     this.fullscreen = true;
     console.log(this.fullscreen)
     setTimeout(()=>{

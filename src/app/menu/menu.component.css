@@ -1,3 +1,26 @@
+/* Initial style */
+#myNavbar .navbar-brand span {
+  color: darkred;
+}
+
+#myNavbar .nav-link {
+  color: rgb(13, 9, 9);
+  font-weight: 500;
+}
+
+/* Style for when the page is scrolled */
+.scrolled {
+  background-color: #333; /* Change background color if needed */
+  #myNavbar .navbar-brand span {
+    color: white;
+  }
+
+  #myNavbar .nav-link {
+    color: white;
+  }
+}
+
+
 body {
     padding-top: 3rem;
     padding-bottom: 3rem;

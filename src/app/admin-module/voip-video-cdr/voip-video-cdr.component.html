@@ -1,3 +1,4 @@
+<div *ngIf="session.islogined()">
 <br><br><br>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,13 +26,13 @@
         align-items: center;
         justify-content: center;
         text-align: center;
-        color: white; /* Text color */
+        color: white;
       }
   
       .text {
-        font-size: 4rem; /* Adjust the font size as needed */
+        font-size: 4rem;
         font-weight: bold;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add text shadow for better visibility */
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
       }
     </style>
   </head>
@@ -53,14 +54,6 @@
     <title>CDR Generator</title>
 </head>
 <body>
-    <!-- <h1>Generate Call Detail Records (CDRs)</h1>
-    <form (ngSubmit)="onSubmit()">
-        <label for="n">Enter the number of CDRs to generate:</label>
-        <input type="number" id="value" name="value" [(ngModel)]='value' required>
-        <br>
-        <input type="submit" value="Generate CDRs">
-    </form> -->
-
     <section>
       <div class="box">
         <div class="square" style="--i:0;"></div>
@@ -148,9 +141,6 @@
                           <h3>To download the VoIP Video-CDR CSV Click the below button</h3>
                       </div>
                       <p class="meta">
-                          <!-- <span class="author">Utilidata</span> -->
-                          <!-- <span> | </span>
-                          <time class="updated" datetime="" itemprop="datePublished">July 27, 2017</time> -->
                       </p>
                   </a>
               </header>
@@ -163,3 +153,11 @@
       </ul>
     
 </body> 
+</html>
+</body>
+</html>
+</div>
+
+<div *ngIf="!session.islogined()">
+  {{goToHome()}}
+</div>

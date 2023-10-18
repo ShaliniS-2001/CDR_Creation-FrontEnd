@@ -9,7 +9,6 @@ import { SessionStorageService } from 'src/app/session-storage.service';
 })
 export class CdrsComponent {
   constructor(public session:SessionStorageService,public route:Router){}
-
   goToHome(){
     this.route.navigate(['/home'])
   }

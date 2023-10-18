@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { ServiceService } from 'src/app/service.service';
+import { SessionStorageService } from 'src/app/session-storage.service';
 import { RoamingVoiceCdr } from 'src/entity/roamingVoiceCdr';
-import * as XLSX from 'xlsx'; // Import the entire XLSX library
+import * as XLSX from 'xlsx';
 
 @Component({
   selector: 'app-roaming-voice-cdr',
@@ -11,15 +13,16 @@ import * as XLSX from 'xlsx'; // Import the entire XLSX library
 export class RoamingVoiceCdrComponent {
 
   roamingVoiceArray:RoamingVoiceCdr[]=[]
-  
-  // value:number=0
   value:any
   //datatables
   dtoptions: DataTables.Settings = {};
-
-  constructor(private service:ServiceService){
+  constructor(private service:ServiceService,public session:SessionStorageService,public route:Router){
   }
 
+  goToHome(){
+    this.route.navigate(['/home'])
+  }
+  
   onSubmit(){
     this.service.displayRoamingVoiceCdr(this.value).subscribe((data) => {  
       this.roamingVoiceArray = data as RoamingVoiceCdr[];

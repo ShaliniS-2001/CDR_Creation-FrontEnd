@@ -6,6 +6,10 @@ import { Router } from '@angular/router';
 })
 export class SessionStorageService {
   private log:boolean=false
+
+  navbar:string=''
+
+
   constructor(private router:Router) { }
   setItem(key:string,value:any): void {
     sessionStorage.setItem(key,JSON.stringify(value));
@@ -26,12 +30,19 @@ export class SessionStorageService {
     {
       this.log=true;
       this.setItem('admin','Admin@123');
-      return true;
+      this.navbar='/adminhome'
+      return "admin";
+    }
+    else if(username=='shalini@gmail.com' && password=='lini@2001'){
+      this.log=true;
+      this.setItem('admin','Admin@123');
+      this.navbar='/userhome'
+      return "user";
+
     }
     else{
-      return false;
+      return "invalid"
     }
-
   }
 
   islogined(): boolean

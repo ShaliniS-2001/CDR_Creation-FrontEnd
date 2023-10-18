@@ -2,14 +2,13 @@
   background-color: #f9f9f9;
   display: flex;
   align-items: flex-end;
-  /* background-image: url('https://img.freepik.com/premium-photo/photo-female-hands-fingers-her-computer-keyboard-while-typing_763111-33172.jpg?w=900'); */
   background-image: url('https://img.freepik.com/free-photo/finger-pressing-smartphone-screen_53876-105170.jpg?w=900&t=st=1696677714~exp=1696678314~hmac=d7ed6019161b682a93493d517169d2d7aeab709dd87957d06e018ee7e655f20a');
   background-size: cover;
   background-repeat: no-repeat;
   color: white;
-  height: 430px; /* Adjust the height as needed */
-  background-position: center bottom; /* Adjust the position as needed */
-  border-radius: 20px; /* Adjust border radius as needed */
+  height: 430px;
+  background-position: center bottom;
+  border-radius: 20px;
   margin: 45px;
 }
 .j-contentBlock {
@@ -19,25 +18,25 @@
   padding: 20px;
 }
 .j-contentBlock__title {
-  font-size: 36px; /* Adjust font size as needed */
+  font-size: 36px; 
 }
 .j-contentBlock__description {
-  font-size: 24px; /* Adjust font size as needed */
+  font-size: 24px;
 }
 .j-button-group {
   display: inline-flex;
 }
 .j-button {
-  font-size: 24px; /* Adjust font size as needed */
-  background-color: darkred; /* Set button background color to red */
-  color: white; /* Set button text color to white */
-  padding: 10px 20px; /* Adjust padding as needed */
+  font-size: 24px;
+  background-color: darkred; 
+  color: white;
+  padding: 10px 20px;
   border: none;
-  border-radius: 10px; /* Adjust border radius as needed */
+  border-radius: 10px;
   cursor: pointer;
 }
 .j-button:hover {
-  background-color: rgb(87, 2, 2); /* Change background color on hover */
+  background-color: rgb(87, 2, 2); 
 }
 
 

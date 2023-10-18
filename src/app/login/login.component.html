@@ -5,8 +5,10 @@
 </form> -->
 <br><br><br>
 <body>
-<div class="login-box">
-    <h2>Login</h2>
+  
+<div class="login-box" style="margin-top: 35px;">
+  <h2>Login</h2>
+   <div style="color: crimson;"> {{msg}} </div><br>
     <form (ngSubmit)="onLoginSuccess()">
       <div class="user-box">
         <input type="text" [(ngModel)]='username' name="username">

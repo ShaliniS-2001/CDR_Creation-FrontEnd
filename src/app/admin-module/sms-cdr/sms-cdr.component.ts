@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { ServiceService } from 'src/app/service.service';
+import { SessionStorageService } from 'src/app/session-storage.service';
 import { smsCdr } from 'src/entity/smsCdr';
-import * as XLSX from 'xlsx'; // Import the entire XLSX library
+import * as XLSX from 'xlsx';
 @Component({
   selector: 'app-sms-cdr',
   templateUrl: './sms-cdr.component.html',
@@ -9,13 +11,16 @@ import * as XLSX from 'xlsx'; // Import the entire XLSX library
 })
 export class SmsCdrComponent {
   smsArray:smsCdr[]=[]
-  // value:number=0
   value:any
   //datatables
   dtoptions: DataTables.Settings = {};
-  constructor(private service:ServiceService){
-    
+  constructor(private service:ServiceService,public session:SessionStorageService,public route:Router){
   }
+
+  goToHome(){
+    this.route.navigate(['/home'])
+  }
+  
   onSubmit(){
     this.service.displaySmsCdr(this.value).subscribe((data) => {  
       this.smsArray = data as smsCdr[];

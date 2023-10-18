@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { ServiceService } from 'src/app/service.service';
+import { SessionStorageService } from 'src/app/session-storage.service';
 import { dataCdr } from 'src/entity/dataCdr';
-import * as XLSX from 'xlsx'; // Import the entire XLSX library
+import * as XLSX from 'xlsx'; 
 
 @Component({
   selector: 'app-data-cdr',
@@ -10,14 +12,15 @@ import * as XLSX from 'xlsx'; // Import the entire XLSX library
 })
 export class DataCdrComponent {
   dataArray:dataCdr[]=[]
-  // quantity:number=0
-  //datatables
   dtoptions: DataTables.Settings = {};
   quantity:any
-  constructor(private service:ServiceService){
+  constructor(private service:ServiceService,public session:SessionStorageService,public route:Router){
   }
-
+  goToHome(){
+    this.route.navigate(['/home'])
+  }
   onSubmit(){
+    this.dataArray = []; // Clear the dataArray to refresh the table
     this.service.displayDataCdr(this.quantity).subscribe((data) => {  
       this.dataArray = data as dataCdr[];
       console.log(this.dataArray);
@@ -37,7 +40,7 @@ export class DataCdrComponent {
         searchPlaceholder: 'Search Here'
       }
     };
-    this.onSubmit();
+    //this.onSubmit();
   }
 
 

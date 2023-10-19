@@ -11,5 +11,4 @@ export class MenuComponent {
   constructor(public service :ServiceService, public session:SessionStorageService){
   }
 
-
 }

@@ -38,6 +38,7 @@ export class VoipVideoCdrComponent implements OnInit{
 
 
   onSubmit(){
+    this.voipvideoArray = []; 
     this.service.displayVoipVideoCdr(this.value).subscribe((data) => {  
       this.voipvideoArray = data as VoipVideoCdr[];
       console.log(this.voipvideoArray);

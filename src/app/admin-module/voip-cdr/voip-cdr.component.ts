@@ -40,6 +40,7 @@ export class VoipCdrComponent implements OnInit{
 
 
   onSubmit(){
+    this.voipArray = []; 
     this.service.displayVoipCdr(this.value).subscribe((data) => { 
       this.voipArray = data as voipCdr[];
       console.log(this.voipArray);

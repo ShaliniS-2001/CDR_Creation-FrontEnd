@@ -38,7 +38,6 @@ export class SessionStorageService {
       this.setItem('admin','Admin@123');
       this.navbar='/userhome'
       return "user";
-
     }
     else{
       return "invalid"
@@ -57,5 +56,6 @@ export class SessionStorageService {
   logout():any{
     this.removeItem('admin');
     this.router.navigateByUrl("/home");
+    
   }
 }

@@ -23,6 +23,7 @@ export class MmsCdrComponent {
   }
 
   onSubmit(){
+    this.mmsArray = []; 
     this.service.displayMmsCdr(this.value).subscribe((data) => {  
       this.mmsArray = data as MmsCdr[];
       console.log(this.mmsArray);

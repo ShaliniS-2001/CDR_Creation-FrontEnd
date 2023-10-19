@@ -24,6 +24,7 @@ export class RoamingSmsCdrComponent {
   }
   
   onSubmit(){
+    this.roamingSmsArray = []; 
     this.service.displayRoamingSmsCdr(this.value).subscribe((data) => {  
       this.roamingSmsArray = data as RoamingSmsCdr[];
       console.log(this.roamingSmsArray);

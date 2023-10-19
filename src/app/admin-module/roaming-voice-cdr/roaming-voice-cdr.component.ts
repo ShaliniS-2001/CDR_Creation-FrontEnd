@@ -24,6 +24,7 @@ export class RoamingVoiceCdrComponent {
   }
   
   onSubmit(){
+    this.roamingVoiceArray = []; 
     this.service.displayRoamingVoiceCdr(this.value).subscribe((data) => {  
       this.roamingVoiceArray = data as RoamingVoiceCdr[];
       console.log(this.roamingVoiceArray);

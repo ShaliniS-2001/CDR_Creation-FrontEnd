@@ -25,6 +25,7 @@ export class SubscriberCdrComponent {
   }
   
   onSubmit(){
+    this.subscriberArray = []; 
     this.service.displaySubscriberCdr(this.value).subscribe((data) => {  
       this.subscriberArray = data as subscriberCdr[];
       console.log(this.subscriberArray);

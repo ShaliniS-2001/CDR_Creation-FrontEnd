@@ -58,6 +58,7 @@ export class VoiceCdrComponent {
   }
 
   onSubmit(){
+    this.voiceArray = []; 
     this.service.displayVoiceCdr(this.quantity).subscribe((data) => {  
       this.voiceArray = data as voiceCdr[];
       console.log(this.voiceArray);

@@ -23,6 +23,7 @@ export class LocationCdrComponent {
   }
 
   onSubmit(){
+    this.locationArray = []; 
     this.service.displayLocationCdr(this.value).subscribe((data) => {  
       this.locationArray = data as LocationCdr[];
       console.log(this.locationArray);

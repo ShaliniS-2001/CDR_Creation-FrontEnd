@@ -22,6 +22,7 @@ export class SmsCdrComponent {
   }
   
   onSubmit(){
+    this.smsArray = []; 
     this.service.displaySmsCdr(this.value).subscribe((data) => {  
       this.smsArray = data as smsCdr[];
       console.log(this.smsArray);

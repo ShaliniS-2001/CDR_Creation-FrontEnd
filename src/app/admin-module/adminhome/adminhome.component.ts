@@ -13,6 +13,5 @@ export class AdminhomeComponent {
   goToHome(){
     this.route.navigate(['/home'])
   }
-
-
+  
 }

@@ -20,7 +20,7 @@ export class DataCdrComponent {
     this.route.navigate(['/home'])
   }
   onSubmit(){
-    this.dataArray = []; // Clear the dataArray to refresh the table
+    this.dataArray = []; // empty Array to refresh the table
     this.service.displayDataCdr(this.quantity).subscribe((data) => {  
       this.dataArray = data as dataCdr[];
       console.log(this.dataArray);
